@@ -11,9 +11,15 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(min = 0) {
+  return min * 60 ;
 }
+
+minToSec(50)   
+minToSec(13)  
+minToSec(2)  
+
+
 // - Execute the function with required parameter
 
 /* 2. 
@@ -26,9 +32,16 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
+function isInRange(lower=0, upper=0, number=0) {
+  if ((lower<number) && (number<upper))
+    return true;
+     else
+       return false;
+ 
   // Your code
 }
+isInRange(1, 20, 9);
+
 // - Execute the function with required parameter
 
 /* 2. calculateBMI
@@ -49,9 +62,20 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI( weight=0, height=0) {
+  let bmi = weight / (height * height);
+   if ( bmi<18.5)
+   return `Underweight`;
+   else if((bmi >= 18.5) && (bmi <=24.9))
+   return  `NormalWeight`;
+   else if((bmi >= 25) && (bmi <=29.9))
+   return `Overweight`;
+   else(bmi >= 30 ) 
+   return `Obese`;
+
 }
+calculateBMI(56, 167);
+
 
 /* 3. appropiateDrinks
 
@@ -64,9 +88,17 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age = 0) {
+  if(age <= 14)
+  return "drink fruit juice";
+  else if(age <= 18)
+  return "drink soda";
+  else if(age <= 21)
+  return "drink fruit-flavored beer";
+  else
+  return "drink throat-piercing vodka";
 }
+appropiateDrinks(22)
 
 /* 4. Add two numers or string
 
@@ -79,8 +111,14 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
+function sum(input1, input2) {
   // Your code
+  if((typeof (input1) == 'number') && (typeof (input2) == 'number') )
+   return  input1 + input2 ;
+  else   if((typeof (input1) == 'string') && (typeof (input2) == 'string') ) 
+   return `${input1} ${input2}`;
+  else 
+   return "Enter valid value"
 }
 
 // Function Test
